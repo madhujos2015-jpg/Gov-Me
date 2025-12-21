@@ -17,13 +17,13 @@ export default function CalculationPage() {
   const handleCalculate = async () => {
     try {
       const backendUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
-      const res = await fetch(`${backendUrl}/services/tax_engine?=${income}&category=${category}&high_turnover=${isHighTurnover}`, {
+      const res = await fetch(`${backendUrl}/services/tax_engine?taxable_income=${income}&category=${category}&high_turnover=${isHighTurnover}`, {
         method: 'POST',
       });
       const data = await res.json();
       setTax(data.tax_details);
     } catch (e) {
-      alert("Check FastAPI! Is it running?");
+      alert("Check FastAPI! Is it running?" + e);
     }
   }
 
