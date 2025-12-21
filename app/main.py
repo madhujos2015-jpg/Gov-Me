@@ -22,3 +22,8 @@ def get_tax(taxable_income: float, category: str, high_turnover: bool = False ):
     # This calls your logic from services/tax_engine.py
     result = calculate_tax_with_relief(taxable_income, category, high_turnover)
     return {"tax_details": result}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
