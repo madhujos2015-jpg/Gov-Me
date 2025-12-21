@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
+
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 md:p-24 font-sans">
@@ -35,6 +36,12 @@ export default function LandingPage() {
               Launch Analysis Engine →
             </Button>
           </Link>
+           <Link href="/schemes">
+            <Button size="lg" className="bg-white text-black hover:bg-zinc-200 rounded-full px-8 h-14 text-lg font-bold mt-4 transition-all hover:scale-105">
+                Open Scheme Finder →
+            </Button>
+          </Link>
+
         </div>
 
         {/* Right Side: The "Bullshit" Summary (Accordion Style) */}
