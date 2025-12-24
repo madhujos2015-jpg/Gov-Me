@@ -1,7 +1,5 @@
 "use client";
-import Link from 'next/link'
-import { Button } from "@/components/ui/button"
-import { ArrowLeft } from 'lucide-react'
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { 
@@ -102,8 +100,7 @@ export default function TaxPlanner() {
     };
 
     try {
-      const backendUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
-      const res = await fetch(`${backendUrl}/analyze-diary`, {
+      const res = await fetch("http://127.0.0.1:8000/analyze-diary", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -119,11 +116,6 @@ export default function TaxPlanner() {
 
   return (
     <div className="min-h-screen bg-slate-50 p-4 md:p-8 font-sans text-slate-900">
-      <Link href="/">
-          <Button variant="ghost" className="mb-2 -ml-2 text-zinc-500 hover:text-black transition-colors">
-              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
-          </Button>
-       </Link>
       <div className="max-w-6xl mx-auto space-y-8">
         
         {/* Header */}
